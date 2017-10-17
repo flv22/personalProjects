@@ -1,0 +1,6 @@
+<tiles>
+	<tile path="tile.png"/>
+	<tile path="tile2.png"/>
+	<tile path="button.png"/>
+	<tile path="button2.png"/>
+</tiles>

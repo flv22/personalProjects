@@ -1,0 +1,42 @@
+# Project: NemesisMapEditor
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Button.o Menu.o Tile.o Window.o $(RES)
+LINKOBJ  = main.o Button.o Menu.o Tile.o Window.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -L"D:/hge17/lib/gcc" -mwindows D:/hge17/lib/gcc/libhge.a D:/hge17/lib/gcc/libhgehelp.a  
+INCS =  -I"C:/Dev-Cpp/include"  -I"D:/hge17/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"D:/hge17/include" 
+BIN  = NemesisMapEditor.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before NemesisMapEditor.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "NemesisMapEditor.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Button.o: Button.cpp
+	$(CPP) -c Button.cpp -o Button.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
+
+Tile.o: Tile.cpp
+	$(CPP) -c Tile.cpp -o Tile.o $(CXXFLAGS)
+
+Window.o: Window.cpp
+	$(CPP) -c Window.cpp -o Window.o $(CXXFLAGS)

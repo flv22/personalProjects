@@ -1,0 +1,4 @@
+<tiles>
+	<tile imageIndex="17" path="goldMine.png"/>
+	<tile imageIndex="18" path="tree.png"/>
+</tiles>

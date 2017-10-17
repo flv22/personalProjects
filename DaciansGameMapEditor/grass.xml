@@ -1,0 +1,7 @@
+
+<tiles>
+
+	<tile imageIndex="15" path="base1.png"/>
+	<tile imageIndex="1" path="center1.png"/>
+	
+</tiles>

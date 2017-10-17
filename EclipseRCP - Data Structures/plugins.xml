@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <plugin type="Stack">
+  		<sourceCode>public class Stack{
+				  	ArrayList<Integer> stack;
+		  			public Stack(){
+		  				stack=new ArrayList<Integer>();
+		  			}
+		  			public void push(int n){}
+		  			public void pop(){}
+		  			public void top(){}
+		  			}
+		</sourceCode>
+  </plugin>
+</plugins> 

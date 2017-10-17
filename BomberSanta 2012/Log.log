@@ -1,0 +1,25 @@
+HGE Started..
+
+HGE version: 1.70
+Date: 05.09.2016, 20:42:27
+
+Application: BomberSanta
+OS: Windows 6.1.7600
+Memory: 4153144K total, 1660412K free
+
+D3D Driver: aticfx32.dll
+Description: AMD Radeon HD 7610M
+Version: 8.17.10.1114
+Can't find appropriate full screen video mode
+Mode: 832 x 660 x UNKNOWN
+
+Sound Device: Speakers (High Definition Audio Device)
+Sample rate: 44100
+
+Init done.
+
+Can't load resource: explosion.png
+Can't load resource: explosion.png
+
+Finishing..
+The End.

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.application.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="org.application.Perspective"
+            id="HelloRCP.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="HelloRCP.application"
+            name="Hello RCP">
+         <property
+               name="windowImages"
+               value="icons/alt_window32.gif">
+         </property>
+         <property
+               name="appName"
+               value="Hello RCP">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="org.application.MainView"
+            id="HelloRCP.mainView"
+            name="MainView"
+            restorable="true">
+      </view>
+   </extension>
+    <extension
+        point="org.eclipse.ui.commands">
+        <category
+              id="hellorcp.MainCategory"
+              name="MainCategory">
+        </category>
+     <command
+           id="hellorcp.NewProjectCommand"
+           categoryId="hellorcp.MainCategory"
+           name="New project"/>
+     <command
+           categoryId="hellorcp.MainCategory"
+           id="HelloRCP.command1"
+           name="RunAnimation">
+     </command>
+  </extension>
+  <extension
+        point="org.eclipse.ui.handlers">
+     <handler
+        class="org.application.CommandHandler"
+        commandId="hellorcp.NewProjectCommandHandler">
+     </handler>
+     <handler
+           class="org.application.CommandHandler"
+           commandId="hellorcp.RunAnimationCommandHandler">
+     </handler>
+</extension> 
+<extension 
+  id="add.item"
+  point="org.eclipse.ui.menus">
+ <menuContribution
+    locationURI= "menu:org.eclipse.ui.main.menu?after=additions">
+    <menu
+       id="hellorcp.Menu"
+       label="File">
+    </menu>
+ </menuContribution>
+<menuContribution
+    locationURI= "menu:hellorcp.Menu?after=additions">
+    <command
+       commandId="hellorcp.NewProjectCommandHandler"
+       id= "testCMDItem"
+       label= "New Project">
+    </command>
+    <command
+          commandId="hellorcp.RunAnimationCommandHandler"
+          label="Run Animation">
+    </command>
+    <separator
+          name="HelloRCP.separator1"
+          visible="true">
+    </separator>
+    <command
+          commandId="org.eclipse.ui.file.close"
+          label="Exit"
+          style="push">
+    </command>
+</menuContribution>
+</extension>
+</plugin>

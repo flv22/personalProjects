@@ -1,0 +1,4 @@
+<tiles>
+	<tile path="tile.png"/>
+	<tile path="tile2.png"/>
+</tiles>

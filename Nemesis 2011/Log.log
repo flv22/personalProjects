@@ -1,0 +1,25 @@
+HGE Started..
+
+HGE version: 1.70
+Date: 17.10.2017, 21:44:17
+
+Application: Project1
+OS: Windows 6.1.7600
+Memory: 4153144K total, 521676K free
+
+D3D Driver: aticfx32.dll
+Description: AMD Radeon HD 7500/7600 Series
+Version: 8.17.10.1404
+Can't find appropriate full screen video mode
+Mode: 1280 x 640 x UNKNOWN
+
+Init done.
+
+Can't load resource: tile.png
+Can't load resource: cursor.png
+Can't load resource: build_menu.png
+Can't load resource: pathTile.png
+Can't load resource: blockTile.png
+
+Finishing..
+The End.

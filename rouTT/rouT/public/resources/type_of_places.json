@@ -1,0 +1,22 @@
+[
+        {"name":"Amusement Park", "value":"amusement_park"},
+        {"name":"Aquarium", "value":"aquarium"},
+        {"name":"Art Gallery", "value":"art_gallery"},
+        {"name":"Bowling", "value":"bowling_alley"},
+        {"name":"Coffee", "value":"cafe"},
+        {"name":"Cinema", "value":"movie_theater"},
+        {"name":"Church", "value":"church"},
+        {"name":"Casino", "value":"casino"},
+        {"name":"Park", "value":"park"},
+        {"name":"Night Club", "value":"night_club"},
+        {"name":"Museum", "value":"museum"},
+        {"name":"Mosque", "value":"mosque"},
+        {"name":"Restaurant", "value":"restaurant"},
+        {"name":"Mall", "value":"shopping_mall"},
+        {"name":"Spa", "value":"spa"},
+        {"name":"Stadium", "value":"stadium"},
+        {"name":"Synagogue", "value":"synagogue"},
+        {"name":"University", "value":"university"},
+        {"name":"Zoo", "value":"zoo"},
+        {"name":"Hindu temple", "value":"hindu_temple"}
+        ]

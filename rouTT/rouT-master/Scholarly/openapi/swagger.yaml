@@ -1,0 +1,360 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: rouT API
+  description: REST API for rouT project
+  version: "1.0.0"
+# the domain of the service
+host: localhost:8080
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /route:
+    get:
+      summary: Route
+      description: |
+        The Route endpoint returns a list of geographical points (latitude,longitude,name) representing the route, based on itinerary type. Different algorithms will be used to compute different itineraries.
+      parameters:
+        - name: lat
+          in: query
+          description: Latitude component of current location.
+          required: true
+          type: number
+          format: double
+        - name: lng
+          in: query
+          description: Longitude component of current location.
+          required: true
+          type: number
+          format: double
+        - name: destination
+          in: query
+          description: Destination name.
+          required: true
+          type: string
+        - name: itinerary
+          in: query
+          description: Itinerary type (fast, smooth, safe, etc).
+          required: true
+          type: string
+      tags:
+        - Route
+      responses:
+        200:
+          description: A collection of route items
+          schema:
+            type: object
+            $ref: '#/definitions/Route'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /places:
+    get:
+      summary: Places
+      description: |
+        The Places endpoint returns a list of places of interest around the user. The user selects a radius, and type of places (restaurants, hotels, etc) and the endpoint will provide him the places around, in the given radius
+      parameters:
+        - name: radius
+          in: query
+          description: Radius component.
+          required: true
+          type: number
+          format: double
+        - name: type
+          in: query
+          description: List of places types.
+          required: true
+          type: array
+          items:
+            type: string
+      tags:
+        - Route
+      responses:
+        200:
+          description: An array of route items
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RouteItem'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /actions/reviews:
+    get:
+      summary: Reviews for particular location
+      description: |
+        The Reviews endpoint returns a list containing reviews for a particular location given as a parameter.
+      parameters:
+        - name: location
+          in: query
+          description: Location name.
+          required: true
+          type: string
+      tags:
+        - Reviews
+      responses:
+        200:
+          description: An array of reviews.
+          schema:
+              $ref: '#/definitions/Reviews'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Creating new review for a particular location
+      description: User wants to create a new review for that location. He will be asked to add his name, his review content, and a rating between 1 and 5 stars. After this, he must select where he wants to share the review (using the social apps, or Google Places, or TripAdvisor, etc.)
+      parameters:
+        - name: location
+          in: query
+          description: Location name
+          required: true
+          type: string
+        - name: author
+          in: query
+          description: User's name. Anonymous by default
+          required: true
+          type: string
+        - name: content
+          in: query
+          description: Review content
+          required: true
+          type: string
+      responses:
+        201:
+          description: Review created successfully
+        403:
+          description: User forbidden to create a review.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /actions/photos:
+    get:
+      summary: Photos for a particular location
+      description: The Photos endpoint returns a list containing photos for a particular location given as a parameter.
+      parameters:
+        - name: location
+          in: query
+          description: Location name.
+          required: true
+          type: string
+      tags:
+        - Photos
+      responses:
+        200:
+          description: An array of URLs. Each URLs represents a different photo related to that particular location.
+          schema:
+            type: array
+            items: 
+              type: string
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Sharing a new photo for that location.
+      description: User wants to share his photo of that particular location. He will select the photo, and in which social app he wants to share it
+      parameters: 
+        - name: photo
+          in: formData
+          description: Photo represented as byte string
+          required: true
+          type: string
+          format: byte
+      responses:
+        201:
+          description: Photo shared successfully.
+        403:
+          description: User forbidden to share photo.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /actions/videos:
+    get:
+      summary: Videos for a particular location
+      description: The Videos endpoint returns a list containing photos for a particular location given as a parameter
+      parameters:
+        - name: location
+          in: query
+          description: Location name.
+          required: true
+          type: string
+      tags:
+        - Videos
+      responses:
+        200:
+          description: An array of URLs. Each URL is representing a diffrent video file related to that particular location.
+          schema:
+            type: array
+            items:
+              type: string
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Sharing a new video for that location.
+      description: User wants to share his videos of that particular location. Just like the photos endpoint, he will be asked to select his video file, and where to share it
+      parameters: 
+        - name: video
+          in: formData
+          description: Video represented as byte string
+          required: true
+          type: string
+          format: byte
+      responses:
+        201:
+          description: Video shared successfully.
+        403:
+          description: User forbidden to share video.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /actions/advices:
+    get:
+      summary: Advices for a particular location
+      description: The Advices endpoint returns a list containing advices for a particular location given as a parameter
+      parameters:
+        - name: location
+          in: query
+          description: Location name.
+          required: true
+          type: string
+      tags:
+        - Advices
+      responses:
+        200:
+          description: An array of advices
+          schema:
+              $ref: '#/definitions/Advices'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Sharing a new advice for that location.
+      description: User wants to share his advices of that particular location. 
+      parameters: 
+        - name: advice
+          in: formData
+          description: Video represented as byte string
+          required: true
+          type: string
+          format: byte
+      responses:
+        201:
+          description: Advice shared successfully.
+        403:
+          description: User forbidden to share advice.
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /actions/sync:
+    post:
+      summary: Synchronize with social apps.
+      description: The Sync endpoint sends a pair of data (username, password) in order to connect with a social app. After this, the social app API returns a success response or a failure response. After this step, the user will be able (or unable) to share and get media about that location (photos,videos,advices,reviews)
+      parameters:
+        - name: location
+          in: query
+          description: Location name.
+          required: true
+          type: string
+      tags:
+        - Advices
+      responses:
+        200:
+          description: Login successful
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    
+definitions:
+  RouteItem:
+    type: object
+    properties:
+      lat:
+        type: number
+        format: double
+        description: Latitude value.
+      lng:
+        type: number
+        format: double
+        description: Longitude value.
+      name:
+        type: string
+        format: string
+        description: Name of the location.
+  Route:
+    type: object
+    properties:
+      route:
+        type: array
+        items:
+          $ref: '#/definitions/RouteItem'
+  Review:
+    type: object
+    properties:
+      author:
+        type: string
+        format: string
+        description: Author's name. Anonymous by default.
+      content:
+        type: string
+        format: string
+        description: Review content.
+      stars:
+        type: number
+        format: int32
+        description: An user can write a review and also can rate that location. Value between 1 and 5.
+  Reviews:
+    type: object
+    properties:
+      limit:
+        type: integer
+        format: int32
+        description: Number of items to retrieve (default 20, max 100).
+      reviews:
+        type: array
+        items:
+          $ref: '#/definitions/Review'
+  Advice:
+    type: object
+    properties:
+      content:
+        type: string
+        format: string
+        description: Advice content. Advices will be simply represented as some text notes.
+  Advices:
+    type: object
+    properties:
+      limit:
+        type: integer
+        format: int32
+        description: Number of items to retrieve (default 20, max 100).
+      reviews:
+        type: array
+        items:
+          $ref: '#/definitions/Advice'
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string

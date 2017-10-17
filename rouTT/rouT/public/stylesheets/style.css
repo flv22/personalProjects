@@ -1,0 +1,29 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}*/
+
+a {
+  color: #00B7FF;
+}
+
+html,body{
+  height: 100%;
+}
+
+.first-page-wrapper{
+  height: 100%;
+}
+
+.half-height{
+  height: 50%;
+}
+
+.inline{
+  display: block;
+}
+
+#map {
+  height: 90%;
+  width: 100%;
+}

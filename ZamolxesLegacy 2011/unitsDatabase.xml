@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<units>
+	<unit type="swordman" sprite="swordman.png" healthPoints="1000" armor="5" name="Swordman"/>
+	<unit type="worker" sprite="worker.png" healthPoints="1000" armor="5" name="Worker"/>
+	<unit type="priest" sprite="priest.png" healthPoints="1000" armor="5" name="Priest"/>
+	<unit type="archer" sprite="archer.png" healthPoints="1000" armor="5" name="Archer"/>
+	
+</units>

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/map_controller.js')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  body
+    h3 rouT
+    #map
+    button.btn.btn-info.btn-lg(type='button', data-toggle='modal', data-target='#myModal') Open Modal
+    #myModal.modal.fade(role='dialog')
+      .modal-dialog
+        // Modal content
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal') ×
+            h4.modal-title Have you visited your objective?
+          .modal-body
+            button(type='button', data-dismiss='modal') Yes
+            button(type='button', data-dismiss='modal') No
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+    script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA19pkGacEYctC_xCWTBsWU7-JGPRifzr8&libraries=places&callback=getLocation')

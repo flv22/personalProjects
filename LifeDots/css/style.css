@@ -1,0 +1,144 @@
+/*form{
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    height: 50%;
+    top: 25%;
+}*/
+
+html,body{
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid{
+    width: 100%;
+    height: 100%;
+}
+
+#index-page-row{
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#banner-area{
+    width: 100%;
+    height: 40%;
+}
+
+.centered-content{
+    text-align: center;
+}
+
+#login-form{
+    /*border: 1px solid black;*/
+    display: inline-block;
+}
+
+#register-form{
+    /*border: 1px solid red;*/
+    display: inline-block;
+    /*border-left: 1px solid gray;*/
+}
+
+#banner-area{
+    //border: 1px solid green;
+}
+
+#register-area{
+    border-left: 1px solid gray;
+    text-align: center;
+}
+
+#login-area{
+    text-align: center;
+}
+
+.message{
+    visibility: hidden;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+#main-page-row{
+    height: 90%;
+    text-align: center;
+}
+
+.circle{
+    width: 32px;
+    height: 32px;
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: green;
+    margin-left: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-button{
+    background-color: darkgreen;
+}
+
+.add-button:hover{
+    background-color: limegreen;
+}
+
+.life-dot-caption{
+    
+    margin-left: 30%;
+    width: 40%;
+    height: 30%;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 20px;
+
+    background-color: white;
+	border: 1px solid white;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.life-dot-bar{
+    clear: both;
+    width: 100%;
+    height: 10%;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: right;
+}
+
+.life-dot-content{
+    text-align: left;
+    width: 100%;
+    height: 90%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.life-dot-bar a{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.left-content{
+    text-align: left;
+}
+
+.half-scale{
+    width: 50%;
+}
+
+a{
+    color: #b1b4b5;
+}
+
+a:hover,a:focus{
+    text-decoration: none;
+    text-decoration-style: none;
+}

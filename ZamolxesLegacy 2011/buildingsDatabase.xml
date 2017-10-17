@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<buildings>
+	<building type="barracks" sprite="barracks.png" healthPoints="1000" armor="5" name="Barracks" button1="swordmanPortrait.png" action1="swordman" typeOfUnit="1"/>
+	<building type="townHall" sprite="townHall.png" healthPoints="1500" armor="7" name="Town Hall" button1="workerPortrait.png" action1="worker" typeOfUnit="3"/>
+	<building type="farm" sprite="farm.png" healthPoints="750" armor="5" name="Farm"/>
+	<building type="archeryRange" sprite="archeryRange.png" healthPoints="900" armor="5" name="Archery Range" button1="archerPortrait.png" action1="archer" typeOfUnit="4"/>
+	<building type="temple" sprite="temple.png" healthPoints="900" armor="3" name="Temple" button1="priestPortrait.png" action1="priest" typeOfUnit="2"/>
+</buildings>

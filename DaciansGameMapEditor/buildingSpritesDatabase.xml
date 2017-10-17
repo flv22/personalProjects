@@ -1,0 +1,7 @@
+<sprites>
+	<sprite imageIndex="0" path="resources\images\buildings\archeryRange.png"/>
+	<sprite imageIndex="1" path="resources\images\buildings\barracks.png"/>
+	<sprite imageIndex="2" path="resources\images\buildings\farm.png"/>
+	<sprite imageIndex="3" path="resources\images\buildings\temple.png"/>
+	<sprite imageIndex="4" path="resources\images\buildings\townHall.png"/>
+</sprites>
